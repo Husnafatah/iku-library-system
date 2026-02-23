@@ -1,7 +1,7 @@
 // app.js
 const { useState, useEffect, useMemo, useRef } = React;
 
-const CSV_URL = "https://docs.google.com/spreadsheets/d/1geYxUhfSFmX4LhpZOJ7SGfWgaNpWVyVvhqWjT6RAj-I/export?format=csv&gid=0";
+const CSV_URL = "https://docs.google.com/spreadsheets/d/1H03U_nydUtmEleqxNR5B1bI2gjJk3aM_xA_5Vxi5maY/edit?gid=1808476795#gid=1808476795";
 
 const App = () => {
     const [user, setUser] = useState(null);

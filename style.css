@@ -1,0 +1,217 @@
+:root {
+    --primary-dark: #003366;
+    --primary-main: #0055A5;
+    --primary-light: #CCE5FF;
+    --bg-alt: #EAF3FF;
+    --white: #FFFFFF;
+    --text-main: #1A1A1A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F7FA;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, .header-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Layout */
+.app-container {
+    width: 1920px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 20px 40px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-dark);
+    color: white;
+    padding: 20px 40px;
+    margin: -20px -40px 30px -40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-left h1 { font-size: 24px; letter-spacing: 0.5px; }
+.header-left p { font-size: 14px; opacity: 0.8; }
+.header-right { font-family: 'DM Sans', sans-serif; font-size: 18px; text-align: right; }
+
+/* KPI Section */
+.kpi-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-main);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.kpi-label { font-size: 14px; color: #666; font-weight: 600; text-transform: uppercase; }
+.kpi-value { font-size: 32px; font-weight: 700; color: var(--primary-dark); margin-top: 5px; }
+
+/* Charts */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    margin-bottom: 30px;
+    height: 400px;
+}
+
+.chart-wrapper {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+/* Table */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.refresh-btn {
+    background: var(--primary-main);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.refresh-btn:hover { background: var(--primary-dark); }
+
+.table-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+th {
+    background: var(--primary-main);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+tr:nth-child(even) { background-color: var(--bg-alt); }
+
+.editable-input {
+    width: 100%;
+    border: 1px solid transparent;
+    background: transparent;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 4px;
+}
+
+.editable-input:focus {
+    background: white;
+    border-color: var(--primary-main);
+    outline: none;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.page-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--primary-main);
+    background: white;
+    color: var(--primary-main);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Login */
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--primary-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+}
+
+.login-box h2 { margin-bottom: 25px; color: var(--primary-dark); }
+
+.login-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-main);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -152,8 +152,21 @@ const App = () => {
                                 <td><EditableCell value={row['CALL NO (050/060)']} onSave={(v) => handleCellEdit(idx, 'CALL NO (050/060)', v)} /></td>
                                 <td>{row.ACCESSION}</td>
                                 <td>{row.TITLE}</td>
-                                <td><EditableCell value={row.STATUS} onSave={(v) => handleCellEdit(idx, 'STATUS', v)} /></td>
-                                <td><EditableCell value={row.STAFF} onSave={(v) => handleCellEdit(idx, 'STAFF', v)} /></td>
+                                <td>
+  <EditableCell 
+    type="status"
+    value={row.STATUS} 
+    onSave={(v) => handleCellEdit(idx, 'STATUS', v)} 
+  />
+</td>
+
+<td>
+  <EditableCell 
+    type="staff"
+    value={row.STAFF} 
+    onSave={(v) => handleCellEdit(idx, 'STAFF', v)} 
+  />
+</td>
                                 <td><EditableCell value={row.DATE} onSave={(v) => handleCellEdit(idx, 'DATE', v)} /></td>
                             </tr>
                         ))}
@@ -177,11 +190,51 @@ const KPI = ({ label, value }) => (
     </div>
 );
 
-const EditableCell = ({ value, onSave }) => {
+const EditableCell = ({ value, onSave, type }) => {
     const [val, setVal] = useState(value || '');
     useEffect(() => setVal(value || ''), [value]);
+
+    if (type === "status") {
+        return (
+            <select
+                className="editable-input"
+                value={val}
+                onChange={(e) => {
+                    setVal(e.target.value);
+                    onSave(e.target.value);
+                }}
+            >
+                <option value="">Select</option>
+                <option value="Complete">Complete</option>
+                <option value="Incomplete">Incomplete</option>
+            </select>
+        );
+    }
+
+    if (type === "staff") {
+        return (
+            <select
+                className="editable-input"
+                value={val}
+                onChange={(e) => {
+                    setVal(e.target.value);
+                    onSave(e.target.value);
+                }}
+            >
+                <option value="">Select</option>
+                <option value="FATIHAH">FATIHAH</option>
+                <option value="FAZILAH">FAZILAH</option>
+                <option value="SAKINAH">SAKINAH</option>
+                <option value="HUSNA">HUSNA</option>
+                <option value="ALIA">ALIA</option>
+                <option value="EYZAN">EYZAN</option>
+                <option value="USER">USER</option>
+            </select>
+        );
+    }
+
     return (
-        <input 
+        <input
             className="editable-input"
             value={val}
             onChange={(e) => setVal(e.target.value)}

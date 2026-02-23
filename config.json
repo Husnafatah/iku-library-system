@@ -1,0 +1,20 @@
+{
+  "system_name": "IKU Library System",
+  "version": "1.0.0",
+  "environment": "Production",
+  "auth_rules": {
+    "admin": {
+      "email": "admin@iku.com",
+      "permissions": ["view", "edit_all", "admin_panel"]
+    },
+    "staff": {
+      "email": "staff@iku.com",
+      "permissions": ["view", "edit_restricted"]
+    }
+  },
+  "data_mapping": {
+    "source": "Google Spreadsheet CSV",
+    "refresh_interval": "On Load / Manual",
+    "columns": 9
+  }
+}
